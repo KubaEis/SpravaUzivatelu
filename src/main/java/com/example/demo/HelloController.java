@@ -15,6 +15,8 @@ public class HelloController {
     @FXML
     private Button addContactButton, deleteButton, updateButton;
     @FXML
+    private MenuItem oAplikaciMenuItem, napovedaMenuItem;
+    @FXML
     private final ObservableList<User> listUsers = FXCollections.observableArrayList();
 
     @FXML
@@ -65,5 +67,28 @@ public class HelloController {
                 alert.showAndWait();
             }
         }
+    }
+
+    @FXML
+    protected void onOAplikaciMenuButtonClick() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("O aplikaci");
+        alert.setHeaderText("Informace o aplikaci");
+        alert.setContentText("Aplikace pro spravu uzivatelu");
+        alert.showAndWait();
+    }
+
+    @FXML
+    protected void onNapovedaMenuButtonClick() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Napoveda");
+        alert.setHeaderText("Napoveda pro spravu uzivatelu");
+        alert.setContentText("Pridej a spravuj uzivatele");
+        alert.showAndWait();
+    }
+
+    @FXML
+    protected void onZavritMenuButtonClick() {
+        System.exit(0);
     }
 }
