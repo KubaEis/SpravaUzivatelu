@@ -49,7 +49,20 @@ public class HelloController {
     protected void onUpdateButtonClick() {
         User user = listViewUsers.getSelectionModel().getSelectedItem();
         if (user != null) {
-
+            if (!nameField.getText().isEmpty() && !nicknameField.getText().isEmpty() && !phoneField.getText().isEmpty()) {
+                user.setName(nameField.getText());
+                user.setNickname(nicknameField.getText());
+                user.setPhone(phoneField.getText());
+                nameField.clear();
+                nicknameField.clear();
+                phoneField.clear();
+            }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Informace");
+                alert.setHeaderText("Dulezite upozorneni");
+                alert.setContentText("Pro pridani kontaktu je nutne vyplnit vsechna pole.");
+                alert.showAndWait();
+            }
         }
     }
 }
