@@ -19,8 +19,9 @@ public class HelloController {
 
     @FXML
     protected void initialize() {
-        listViewUsers.getItems().add(new User("Jan Novak","Honzi","888999111"));
-        listViewUsers.getItems().add(new User("Ondra Musil","Kokot","123456789"));
+        listUsers.add(new User("Jan Novak","Honzi","888999111"));
+        listUsers.add(new User("Ondra Musil","Kokot","123456789"));
+        listViewUsers.setItems(listUsers);
     }
 
     @FXML
@@ -60,7 +61,7 @@ public class HelloController {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Informace");
                 alert.setHeaderText("Dulezite upozorneni");
-                alert.setContentText("Pro pridani kontaktu je nutne vyplnit vsechna pole.");
+                alert.setContentText("Pro uprave kontaktu je nutne vyplnit vsechna pole.");
                 alert.showAndWait();
             }
         }
